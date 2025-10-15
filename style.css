@@ -1,0 +1,160 @@
+ /* Paleta de Colores: Rojo Ladrillo, Negro, Blanco, Azul Oscuro Metálico, Verde Terminal */
+        :root {
+            --color-rojo-alerta: #D02B2B;
+            --color-negro-fondo: #000000;
+            --color-blanco-texto: #FFFFFF;
+            --color-azul-oscuro-metalico: #1A3E5D; /* Para bordes, fondos de elementos */
+            --color-gris-terminal: #2D3748; /* Fondo de paneles */
+            --color-verde-terminal: #00FF00; /* Para texto de éxito, elementos activos */
+            --font-display: 'Impact', 'Arial Black', sans-serif;
+            --font-body: 'Share Tech Mono', monospace; /* Fuente de terminal para un toque de JS */
+        }
+
+        /* Estilo general para la simulación de terminal/monitor antiguo */
+        body {
+            font-family: var(--font-body);
+            color: var(--color-blanco-texto);
+            background-color: var(--color-negro-fondo);
+            overflow-x: hidden; /* Evita scroll horizontal por el canvas */
+        }
+        
+        /* Estilos de la época: tipografía audaz y alto contraste */
+        .propaganda-title {
+            font-family: var(--font-display);
+            letter-spacing: 0.18em; /* Más espaciado para un look más técnico */
+            text-shadow: 4px 4px var(--color-negro-fondo);
+        }
+
+        .propaganda-card {
+            background-color: var(--color-gris-terminal); /* Fondo de panel */
+            border-left: 8px solid var(--color-rojo-alerta);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            border-radius: 8px; /* Bordes ligeramente redondeados */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid var(--color-azul-oscuro-metalico);
+        }
+
+        .propaganda-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 15px 25px rgba(208, 43, 43, 0.4);
+            border-color: var(--color-rojo-alerta);
+        }
+
+        /* Estilo del "Telón de Acero" para la línea divisoria - Más robusto */
+        .iron-curtain-divider {
+            height: 12px;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                var(--color-rojo-alerta) 25%,
+                var(--color-negro-fondo) 50%,
+                var(--color-rojo-alerta) 75%,
+                transparent 100%
+            );
+            border-top: 2px solid var(--color-azul-oscuro-metalico);
+            border-bottom: 2px solid var(--color-azul-oscuro-metalico);
+            margin: 4rem 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Estilo para los elementos del juego (Drag & Drop) */
+        .draggable-event {
+            cursor: grab;
+            transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+            font-family: var(--font-body); /* Fuente de terminal */
+            text-transform: uppercase;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+            height: 48px; /* Altura fija para consistencia */
+            display: flex;
+            align-items: center;
+            background-color: var(--color-azul-oscuro-metalico);
+            border: 1px solid var(--color-rojo-alerta);
+            color: var(--color-blanco-texto);
+        }
+
+        .draggable-event:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 12px rgba(208, 43, 43, 0.6);
+            background-color: #3f5f82; /* Tono más claro en hover */
+        }
+
+        .draggable-event:active {
+            cursor: grabbing;
+            transform: scale(0.98);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .drop-zone {
+            height: 48px; /* Misma altura que los arrastrables */
+            border: 2px dashed var(--color-azul-oscuro-metalico);
+            background-color: var(--color-negro-fondo);
+            transition: background-color 0.2s, border-color 0.2s;
+            color: #9ca3af; /* Color gris suave */
+            border-radius: 4px;
+        }
+        
+        .drop-zone:empty:hover {
+            border-color: var(--color-rojo-alerta);
+        }
+
+        /* Contenedor del juego para simular un mapa de control */
+        #game-container {
+            border: 5px outset var(--color-azul-oscuro-metalico); /* Borde 3D */
+            background-color: #0f172a; /* Fondo más oscuro para contraste */
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0,0,0,0.5);
+        }
+        
+        .result-message {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            text-shadow: 2px 2px var(--color-negro-fondo);
+        }
+
+        .bg-rojo-propaganda { background-color: var(--color-rojo-alerta); }
+        .text-rojo-propaganda { color: var(--color-rojo-alerta); }
+        .text-verde-terminal { color: var(--color-verde-terminal); }
+
+        /* Estilo de botón de video */
+        .video-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--color-azul-oscuro-metalico);
+            border-radius: 9999px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            border: 1px solid #4a5568;
+        }
+        .video-btn:hover {
+            background-color: #4a5568;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Canvas para el fondo animado */
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--color-negro-fondo);
+        }
+
+        /* Contenedores de arrastre y soltar */
+        #drag-container, #drop-container {
+            background-color: #1a202c; /* Un gris más oscuro para los contenedores */
+            border: 1px solid var(--color-azul-oscuro-metalico);
+            border-radius: 6px;
+            min-height: 400px; /* Asegura que el contenedor tenga suficiente altura */
+            padding: 1rem;
+        }
+        #drop-container {
+            background-color: #0f172a; /* Aún más oscuro para la zona final */
+            border: 2px dashed #00FF00; /* Borde verde para la zona de éxito */
+        }
+
+        .bg-green-success { background-color: #044b04; border-color: var(--color-verde-terminal); }
+        .bg-red-fail { background-color: #6a0e0e; border-color: var(--color-rojo-alerta); }
+        .bg-blue-active { background-color: #0d2e4f; border-color: #3498db; }

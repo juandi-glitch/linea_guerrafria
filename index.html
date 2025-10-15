@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Guerra Fría</title>
+    <!-- Carga de Tailwind CSS para el diseño --><script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Canvas para el fondo animado (Rain Code) --><canvas id="background-canvas"></canvas>
+
+    <!-- Encabezado Estilo Propaganda --><header class="bg-rojo-propaganda py-6 shadow-xl border-b-4 border-black relative z-10">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="propaganda-title text-5xl sm:text-7xl font-bold text-white uppercase">
+                ¡ALERTA MUNDIAL!
+            </h1>
+            <p class="text-xl sm:text-2xl font-semibold mt-2 text-black">Línea de Tiempo de la Guerra Fría (1945 - 1991)</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 relative z-10">
+        
+        <!-- Línea de Tiempo de Eventos --><section id="timeline" class="mb-16">
+            <h2 class="propaganda-title text-4xl text-center mb-12 text-rojo-propaganda border-b-4 border-rojo-propaganda pb-2">EXPEDIENTES CLASIFICADOS: ACONTECIMIENTOS</h2>
+
+            <div class="space-y-12 max-w-4xl mx-auto">
+
+                <!-- Evento 1: Potsdam --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1945</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">CONFERENCIA DE POTSDAM: FIN DE LA II GUERRA</h3>
+                            <p class="mb-4 text-gray-300">Los Aliados deciden el futuro de Alemania. Las fricciones entre EE. UU. y la URSS por el control de Europa se hacen evidentes.</p>
+                            <img src="https://arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/XBHDK7VW6RDLXDAWM3SN3HSUO4.jpg" 
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/34495E/FFFFFF?text=MAPA+DE+ALEMANIA';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: División de las zonas de ocupación.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evento 2: Doctrina Truman --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1947</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">DOCTRINA TRUMAN: LA CONTENCIÓN</h3>
+                            <p class="mb-4 text-gray-300">EE. UU. declara su intención de apoyar a las naciones libres contra la expansión comunista. **Inicio formal de la Guerra Fría**.</p>
+                             <img src="https://c.files.bbci.co.uk/15A43/production/_124834688_p0bznnng-1.jpg" 
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/D02B2B/FFFFFF?text=CONTENCIÓN';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: Diseño gráfico de la Contención.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evento 3: Plan Marshall --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1947</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">PLAN MARSHALL: RECONSTRUCCIÓN</h3>
+                            <p class="mb-4 text-gray-300">Programa de ayuda económica de EE. UU. a Europa Occidental para prevenir la inestabilidad y el avance comunista.</p>
+                            <img src="https://elordenmundial.com/wp-content/uploads/2020/09/bienvenido_mr_marshall_poster.png" 
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/1A3E5D/FFFFFF?text=AYUDA+ECONÓMICA';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: Reconstrucción financiada por EE. UU.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evento 4: OTAN --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1949</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">FORMACIÓN DE LA OTAN</h3>
+                            <p class="mb-4 text-gray-300">Creación de la Organización del Tratado del Atlántico Norte, la **alianza militar occidental**.</p>
+                            <img src="https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2022/06/30/62bde7079db13.r_d.380-283-15789.jpeg" 
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/34495E/FFFFFF?text=ALIANZA+OCCIDENTAL';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: Escudo militar de la OTAN.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evento 5: Corea (Video) --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1950-53</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">GUERRA DE COREA</h3>
+                            <p class="mb-4 text-gray-300">El **primer gran conflicto proxy** donde EE. UU. (ONU) y la URSS/China se enfrentaron indirectamente en Asia.</p>                                
+                            <!-- Icono SVG de Play --><iframe width="560" height="315" src="https://www.youtube.com/embed/Nf2y-nLLi0c?si=gBAMfBgAH_D6hqqv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.348 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.991c-1.25.705-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento 6: Pacto de Varsovia --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1955</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">PACTO DE VARSOVIA</h3>
+                            <p class="mb-4 text-gray-300">Respuesta militar de la URSS y sus aliados, consolidando el **Bloque del Este**.</p>
+                            <img src="https://elordenmundial.com/wp-content/uploads/2021/12/pacto-varsovia-union-sovietica.jpg"  
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/000000/D02B2B?text=ALIANZA+SOVIÉTICA';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: Sello de la alianza militar Soviética.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evento 7: Crisis Cuba --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1962</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">CRISIS DE LOS MISILES EN CUBA</h3>
+                            <p class="mb-4 text-gray-300">El momento de **máxima tensión** donde el mundo estuvo más cerca de una guerra nuclear total.</p>
+                            <img src="https://c.files.bbci.co.uk/8B54/production/_126886653_fii.jpg"  
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/D02B2B/FFFFFF?text=ALARMA+NUCLEAR';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: Alerta de misiles.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento 8: Luna (Video) --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1969</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">CARRERA ESPACIAL: APOLLO 11</h3>
+                            <p class="mb-4 text-gray-300">EE. UU. gana un hito crucial al lograr que el hombre llegue a la Luna. **Victoria en la Carrera Espacial**.</p>                                
+                            <!-- Icono SVG de Play --><iframe width="560" height="315" src="https://www.youtube.com/embed/16AhQaStWxg?si=0jmW5xjiQ8nIt3JT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.348 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.991c-1.25.705-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento 9: Muro de Berlín --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1989</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">CAÍDA DEL MURO DE BERLÍN</h3>
+                            <p class="mb-4 text-gray-300">El símbolo más potente de la división y el comienzo del fin del Bloque Soviético.</p>
+                            <img src="https://noticias.unsam.edu.ar/wp-content/uploads/2019/10/Cedinhco_Berlin.jpg"  
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/1A3E5D/FFFFFF?text=LIBERTAD+EN+BERLÍN';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: El fin del "Telón de Acero".</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evento 10: URSS --><div class="propaganda-card p-6 rounded-lg">
+                    <div class="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-6">
+                        <span class="text-3xl font-bold text-rojo-alerta mb-4 sm:mb-0 sm:w-1/4">1991</span>
+                        <div class="sm:w-3/4">
+                            <h3 class="text-2xl font-bold mb-2 uppercase text-white">DESINTEGRACIÓN DE LA URSS</h3>
+                            <p class="mb-4 text-gray-300">La dimisión de Gorbachov y la disolución de la Unión Soviética marcan el **fin oficial** de la Guerra Fría.</p>
+                            <img src="https://sobrehistoria.com/wp-content/uploads/2022/02/caida-de-la-urss-bandera-istock.jpg"  
+                                 class="w-full h-auto rounded-lg mb-2 border-2 border-white/50"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x150/000000/D02B2B?text=FIN+DE+LA+URSS';"
+                            >
+                            <span class="text-sm text-gray-400 block mt-1">Imagen: El final del conflicto bipolar.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Telón de Acero: Divisor --><div class="iron-curtain-divider"></div>
+
+        <!-- Sección del Juego --><section id="game" class="mb-16">
+            <h2 class="propaganda-title text-4xl text-center mb-10 text-rojo-alerta border-b-4 border-rojo-alerta pb-2">🕹️ CLASIFICACIÓN SECRETA: LA MISIÓN CRONOLÓGICA</h2>
+
+            <div id="game-container" class="p-6 sm:p-10 rounded-xl max-w-4xl mx-auto">
+                <p class="text-xl text-center text-gray-300 mb-6">¡Agente, su misión es crucial! Clasifique correctamente los expedientes en orden cronológico (del más antiguo al más reciente).</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Columna de Eventos Desordenados (Arrastrables) --><div>
+                        <h3 class="text-2xl font-bold mb-4 text-rojo-alerta uppercase">EXPEDIENTES PENDIENTES</h3>
+                        <div id="drag-container" class="space-y-3 p-3 bg-gray-700 rounded-lg min-h-[400px] shadow-inner">
+                            <!-- Los eventos se insertarán aquí por JS --></div>
+                    </div>
+
+                    <!-- Columna de Zonas de Soltar (Orden) --><div>
+                        <h3 class="text-2xl font-bold mb-4 text-verde-terminal uppercase">INFORME FINAL (ORDEN CORRECTO)</h3>
+                        <div id="drop-container" class="space-y-3">
+                            <!-- Las zonas de soltar se insertarán aquí por JS --></div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center space-y-4">
+                    <button id="check-btn" class="bg-rojo-alerta hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg uppercase shadow-lg transition duration-200">
+                        VERIFICAR ORDEN
+                    </button>
+                    <div id="result-message" class="result-message mt-4"></div>
+                    <button id="reset-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg uppercase shadow-md transition duration-200 hidden">
+                        REINICIAR MISIÓN
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página Estilo Orwelliano --><footer class="bg-gray-800 py-6 text-center border-t-4 border-black relative z-10">
+        <p class="text-sm text-gray-400 italic max-w-xl mx-auto px-4">"Quien controla el pasado, controla el futuro. Quién controla el presente, controla el pasado." - George Orwell (1984)</p>
+        <p class="text-xs mt-2 text-gray-500">Diseño Gráfico Bipolar - Contraste Capitalista/Comunista (Con fines educativos)</p>
+    </footer>
+    <script>
+        // --- JavaScript para el fondo animado (Rain Code / Matrix Effect) ---
+        const canvas = document.getElementById('background-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const charSet = '0123456789ABCDEF!@#$%^&*()_+=-{}[]|:;<,>.?/~`'; // Caracteres para la lluvia
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = []; // Array para almacenar la posición Y de cada columna
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1; // Inicializa la primera fila
+        }
+
+        function drawRainCode() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Fondo negro semi-transparente para el efecto de "rastro"
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00FF00'; // Color verde brillante para el texto (color de terminal)
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = charSet.charAt(Math.floor(Math.random() * charSet.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0; // Reinicia la "gota" si sale de la pantalla
+                }
+                drops[i]++; // Mueve la "gota" hacia abajo
+            }
+        }
+
+        let animationFrameId;
+        function animateBackground() {
+            drawRainCode();
+            animationFrameId = requestAnimationFrame(animateBackground);
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            // Reiniciar drops para ajustarse a las nuevas dimensiones
+            const newColumns = canvas.width / fontSize;
+            drops.length = 0; // Limpiar el array existente
+            for (let i = 0; i < newColumns; i++) {
+                drops[i] = Math.floor(Math.random() * (canvas.height / fontSize)); // Posiciones aleatorias iniciales
+            }
+        });
+
+        // Iniciar la animación al cargar
+        animateBackground();
+
+
+        // --- JavaScript del Juego (Mismo código, pero con clases y colores actualizados) ---
+        const events = [
+            { id: 1, name: "Conferencia de Potsdam (1945)" },
+            { id: 2, name: "Doctrina Truman (1947)" },
+            { id: 3, name: "Plan Marshall (1947)" },
+            { id: 4, name: "Formación de la OTAN (1949)" },
+            { id: 5, name: "Guerra de Corea (1950-53)" },
+            { id: 6, name: "Pacto de Varsovia (1955)" },
+            { id: 7, name: "Crisis de los Misiles en Cuba (1962)" },
+            { id: 8, name: "Llegada del Hombre a la Luna (1969)" },
+            { id: 9, name: "Caída del Muro de Berlín (1989)" },
+            { id: 10, name: "Desintegración de la URSS (1991)" }
+        ];
+
+        const dragContainer = document.getElementById('drag-container');
+        const dropContainer = document.getElementById('drop-container');
+        const checkBtn = document.getElementById('check-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const resultMessage = document.getElementById('result-message');
+        
+        let dropZones = [];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function initializeGame() {
+            dragContainer.innerHTML = '';
+            dropContainer.innerHTML = '';
+            resultMessage.innerHTML = '';
+            resultMessage.className = 'result-message mt-4';
+            checkBtn.classList.remove('hidden');
+            resetBtn.classList.add('hidden');
+            dropZones = [];
+
+            const shuffledEvents = shuffleArray([...events]);
+            
+            shuffledEvents.forEach(event => {
+                const item = document.createElement('div');
+                item.textContent = event.name;
+                item.id = `event-${event.id}`;
+                item.draggable = true;
+                item.classList.add('draggable-event', 'p-3', 'rounded', 'text-sm');
+                item.addEventListener('dragstart', dragStart);
+                dragContainer.appendChild(item);
+            });
+
+            for (let i = 1; i <= events.length; i++) {
+                const zone = document.createElement('div');
+                zone.id = `drop-${i}`;
+                zone.classList.add('drop-zone', 'p-2', 'rounded', 'flex', 'items-center', 'justify-start');
+                
+                zone.innerHTML = `<span class="font-bold text-lg mr-2 text-verde-terminal">${i}.</span> <span class="text-sm">INSERTE EXPEDIENTE AQUÍ</span>`;
+                
+                zone.dataset.expectedId = events[i - 1].id;
+                zone.addEventListener('dragover', dragOver);
+                zone.addEventListener('drop', drop);
+                dropContainer.appendChild(zone);
+                dropZones.push(zone);
+            }
+        }
+        
+        let draggedElement = null;
+
+        function dragStart(e) {
+            draggedElement = e.target;
+            e.dataTransfer.setData('text/plain', e.target.id);
+            setTimeout(() => {
+                e.target.classList.add('opacity-50', 'scale-95'); // Efecto visual al arrastrar
+            }, 0);
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+            // Resaltar la zona de soltar activa
+            let dropZone = e.target;
+            while (!dropZone.classList.contains('drop-zone')) {
+                dropZone = dropZone.parentElement;
+                if (!dropZone) return; 
+            }
+            dropZone.classList.add('border-rojo-alerta', 'scale-105'); /* Resaltar al pasar */
+        }
+
+        function dragLeave(e) {
+             let dropZone = e.target;
+            while (!dropZone.classList.contains('drop-zone')) {
+                dropZone = dropZone.parentElement;
+                if (!dropZone) return; 
+            }
+            dropZone.classList.remove('border-rojo-alerta', 'scale-105');
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            const id = e.dataTransfer.getData('text/plain');
+            const draggable = document.getElementById(id);
+            let dropZone = e.target;
+            const dropIndex = dropZones.findIndex(z => z === dropZone) + 1;
+
+            while (!dropZone.classList.contains('drop-zone')) {
+                dropZone = dropZone.parentElement;
+                if (!dropZone) return; 
+            }
+            
+            dropZone.classList.remove('border-rojo-alerta', 'scale-105'); // Remover resaltado
+
+            const positionText = `<span class="font-bold text-lg mr-2 text-verde-terminal">${dropZones.indexOf(dropZone) + 1}.</span>`;
+
+            if (dropZone.querySelector('.draggable-event')) {
+                const currentItem = dropZone.querySelector('.draggable-event');
+                dragContainer.appendChild(currentItem);
+                
+                dropZone.innerHTML = `${positionText} <span class="text-sm text-gray-400">INSERTE EXPEDIENTE AQUÍ</span>`;
+                dropZone.classList.remove('bg-green-success', 'bg-red-fail', 'text-white', 'bg-blue-active');
+            }
+
+            dropZone.innerHTML = positionText;
+            dropZone.appendChild(draggable);
+            draggable.classList.remove('opacity-50', 'scale-95');
+            
+            dropZone.classList.remove('text-gray-400');
+            dropZone.classList.add('bg-blue-active', 'text-white', 'justify-start');
+        }
+
+        function checkOrder() {
+            let correctCount = 0;
+
+            dropZones.forEach((zone, index) => {
+                const item = zone.querySelector('.draggable-event');
+                const expectedId = parseInt(zone.dataset.expectedId);
+                const positionText = `<span class="font-bold text-lg mr-2 text-verde-terminal">${index + 1}.</span>`;
+
+                zone.classList.remove('bg-green-success', 'bg-red-fail', 'bg-blue-active', 'text-gray-400');
+
+                if (item && parseInt(item.id.split('-')[1]) === expectedId) {
+                    zone.classList.add('bg-green-success', 'text-white');
+                    correctCount++;
+                } else if (item) {
+                    zone.classList.add('bg-red-fail', 'text-white');
+                } else {
+                    zone.classList.add('bg-gray-700', 'text-red-400');
+                    zone.innerHTML = `${positionText} <span class="text-sm">-- EXPEDIENTE AUSENTE --</span>`;
+                }
+            });
+
+            if (correctCount === events.length) {
+                resultMessage.textContent = 'MISIÓN CUMPLIDA: ¡ÉXITO! CLASIFICACIÓN PERFECTA. ¡FIN DE LA GUERRA FRÍA!';
+                resultMessage.classList.remove('text-red-500');
+                resultMessage.classList.add('text-verde-terminal');
+                checkBtn.classList.add('hidden');
+                resetBtn.classList.remove('hidden');
+                disableDragging();
+            } else {
+                resultMessage.textContent = `INFORME: ${correctCount} de ${events.length} correctos. ¡VUELVA A INTENTARLO!`;
+                resultMessage.classList.remove('text-verde-terminal');
+                resultMessage.classList.add('text-red-500');
+            }
+        }
+        
+        function disableDragging() {
+            document.querySelectorAll('.draggable-event').forEach(item => {
+                item.draggable = false;
+                item.classList.remove('draggable-event', 'cursor-grab');
+                item.classList.add('cursor-default');
+            });
+        }
+
+        checkBtn.addEventListener('click', checkOrder);
+        resetBtn.addEventListener('click', initializeGame);
+
+        window.onload = initializeGame;
+
+    </script>
+</body>
+</html>
