@@ -158,3 +158,20 @@
         .bg-green-success { background-color: #044b04; border-color: var(--color-verde-terminal); }
         .bg-red-fail { background-color: #6a0e0e; border-color: var(--color-rojo-alerta); }
         .bg-blue-active { background-color: #0d2e4f; border-color: #3498db; }
+        /* Nuevo CSS para videos responsivos (16:9) */
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 * 100) */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
