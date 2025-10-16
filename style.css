@@ -175,3 +175,9 @@
             height: 100%;
             border: none;
         }
+        /* 🛑 NUEVA REGLA: Reducir el espaciado en pantallas pequeñas (móviles) */
+        @media (max-width: 640px) {
+            .propaganda-title {
+                letter-spacing: 0.05em; /* Reduce el espaciado a casi la mitad en móviles */
+            }
+        }
